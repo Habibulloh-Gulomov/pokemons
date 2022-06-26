@@ -3511,7 +3511,7 @@ for(hero of pokemons){
 	newSpan.textContent = 'id: ' + hero.id
 	newNum.textContent = 'num: ' + hero.num
 	newTitle.textContent = 'name: ' + hero.name
-	newImg.src = 'http://www.serebii.net/pokemongo/pokemon/001.png' ,'http://www.serebii.net/pokemongo/pokemon/002.png'
+	newImg.src = hero.img
 	newHeight.textContent = 'Height: ' + hero.height
 	newWeight.textContent = 'Weight: ' + hero.weight
 	newcandy.textContent = 'Candy: ' + hero.candy
