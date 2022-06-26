@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('../fonts/m-plus-rounded-1c-v15-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/m-plus-rounded-1c-v15-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+body{
+  font-family: 'M PLUS Rounded 1c' , 'Arial' , sans-serif;
+
+}
+
+.container{
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.item{
+  border: 5px solid rgb(68, 100, 100);
+  margin: 0 10px 25px;
+  padding: 25px;
+  border-radius:10px ;
+  text-align: center;
+  width: 200px;
+  background-color: rgb(73, 120, 120);
+}
+
+.list{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: space-around;
+}
+
+.span{
+  background-color: cornsilk;
+  color: darkslategray;
+  border-radius: 5px;
+  padding: 8px;
+  margin-left: 10px;
+}
+
+.white{
+  color: #fff;
+}
