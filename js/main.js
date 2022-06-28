@@ -3607,8 +3607,17 @@ elSelect.appendChild(elOption8)
 elSelect.appendChild(elOption9)
 elSelect.appendChild(elOption10)
 
+// function pic(array , node){
+// 	let complete = []
+// 	for (i of array){
+// 			complete.push(i.type[0])		
+			
+// 	}
+// 	var newOption = document.createElement('option');
+// 	// newOption.textContent = (i.type)
+// 	node.appendChild(newOption); 
+// 	newOption.textContent = new Set(complete)
+// }
+// // elSelect.textContent = newIt
+// pic(pokemons,elSelect)
 
-// let burn = []
-// burn.push(pokemons.type)
-// let burnLast = new Set(burn)
-// console.log(burnLast)
