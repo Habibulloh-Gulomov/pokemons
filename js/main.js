@@ -3476,66 +3476,139 @@ var pokemons = [
 	},
 ];
 
-for(hero of pokemons){
-  var newItem = document.createElement('li')
-  var newSpan = document.createElement('span')
-  var newNum = document.createElement('span')
-  var newTitle = document.createElement('h3')
-  var newImg = document.createElement('img')
-  var newType = document.createElement('p')
-  var newHeight = document.createElement('p')
-  var newWeight = document.createElement('p')
-  var newcandy = document.createElement('p')
-  var newEgg = document.createElement('p')
-  var newChance = document.createElement('p')
-  var newAvg = document.createElement('p')
-  var newTime = document.createElement('p')
-  var newMultiplayer = document.createElement('p')
-  var newWeak = document.createElement('p')
-
-  newItem.appendChild(newSpan)
-  newItem.appendChild(newNum)
-  newItem.appendChild(newTitle)
-  newItem.appendChild(newImg)
-  newItem.appendChild(newHeight)
-  newItem.appendChild(newWeight)
-  newItem.appendChild(newcandy)
-  newItem.appendChild(newEgg)
-  newItem.appendChild(newChance)
-  newItem.appendChild(newAvg)
-  newItem.appendChild(newTime)
-  newItem.appendChild(newMultiplayer)
-  newItem.appendChild(newWeak)
 	
-
-	newSpan.textContent = 'id: ' + hero.id
-	newNum.textContent = 'num: ' + hero.num
-	newTitle.textContent = 'name: ' + hero.name
-	newImg.src = hero.img
-	newHeight.textContent = 'Height: ' + hero.height
-	newWeight.textContent = 'Weight: ' + hero.weight
-	newcandy.textContent = 'Candy: ' + hero.candy
-	newEgg.textContent = 'Egg: ' + hero.egg
-	newChance.textContent = 'Spawn chance: ' + hero.spawn_chance
-	newAvg.textContent = 'Avg spawns: ' + hero.avg_spawns
-	newTime.textContent = 'Spawn time: ' + hero.spawn_time
-	newMultiplayer.textContent = 'Multipliers: ' + hero.multipliers
-	newWeak.textContent = '	Weaknesses: ' + hero.weaknesses
-
-
-	elList.appendChild(newItem)
-	elList.setAttribute('class','list')
-	newItem.setAttribute('class','item')
-	newSpan.setAttribute('class','span')
-	newNum.setAttribute('class','span')
-	newHeight.setAttribute('class','white')
-	newWeight.setAttribute('class','white')
-	newcandy.setAttribute('class','white')
-	newEgg.setAttribute('class','white')
-	newChance.setAttribute('class','white')
-	newAvg.setAttribute('class','white')
-	newTime.setAttribute('class','white')
-	newMultiplayer.setAttribute('class','white')
-	newWeak.setAttribute('class','white')
-	newTitle.setAttribute('class','white')
+function domAdd(array,node){
+	for(hero of array){
+		var newItem = document.createElement('li')
+		var newSpan = document.createElement('span')
+		var newNum = document.createElement('span')
+		var newTitle = document.createElement('h3')
+		var newImg = document.createElement('img')
+		var newType = document.createElement('p')
+		var newHeight = document.createElement('p')
+		var newWeight = document.createElement('p')
+		var newcandy = document.createElement('p')
+		var newEgg = document.createElement('p')
+		var newChance = document.createElement('p')
+		var newAvg = document.createElement('p')
+		var newTime = document.createElement('p')
+		var newMultiplayer = document.createElement('p')
+		var newWeak = document.createElement('p')
+	
+		newItem.appendChild(newSpan)
+		newItem.appendChild(newNum)
+		newItem.appendChild(newTitle)
+		newItem.appendChild(newImg)
+		newItem.appendChild(newType)
+		newItem.appendChild(newHeight)
+		newItem.appendChild(newWeight)
+		newItem.appendChild(newcandy)
+		newItem.appendChild(newEgg)
+		newItem.appendChild(newChance)
+		newItem.appendChild(newAvg)
+		newItem.appendChild(newTime)
+		newItem.appendChild(newMultiplayer)
+		newItem.appendChild(newWeak)
+		newSpan.textContent = 'id: ' + hero.id
+		newNum.textContent = 'num: ' + hero.num
+		newTitle.textContent = 'name: ' + hero.name
+		newImg.src = hero.img
+		newType.textContent = 'Type: ' + hero.type
+		newHeight.textContent = 'Height: ' + hero.height
+		newWeight.textContent = 'Weight: ' + hero.weight
+		newcandy.textContent = 'Candy: ' + hero.candy
+		newEgg.textContent = 'Egg: ' + hero.egg
+		newChance.textContent = 'Spawn chance: ' + hero.spawn_chance
+		newAvg.textContent = 'Avg spawns: ' + hero.avg_spawns
+		newTime.textContent = 'Spawn time: ' + hero.spawn_time
+		newMultiplayer.textContent = 'Multipliers: ' + hero.multipliers
+		newWeak.textContent = '	Weaknesses: ' + hero.weaknesses
+	
+	
+		node.appendChild(newItem)
+		elList.setAttribute('class','list')
+		newItem.setAttribute('class','item')
+		newSpan.setAttribute('class','span')
+		newNum.setAttribute('class','span')
+		newHeight.setAttribute('class','white')
+		newWeight.setAttribute('class','white')
+		newcandy.setAttribute('class','white')
+		newEgg.setAttribute('class','white')
+		newChance.setAttribute('class','white')
+		newAvg.setAttribute('class','white')
+		newTime.setAttribute('class','white')
+		newMultiplayer.setAttribute('class','white')
+		newWeak.setAttribute('class','white')
+		newTitle.setAttribute('class','white')
+		newType.setAttribute('class','white')
+	}
 }
+
+domAdd(pokemons,elList)
+
+const elSelect = document.querySelector('.js-select')
+let result = []
+
+elSelect.addEventListener("change" , function(){
+	result = [];
+  elList.innerHTML =''
+	let elSelectVal = elSelect.value
+	pokemons.forEach(hero => {
+		if(hero.type.includes(elSelectVal)){
+			result.push(hero)
+		}
+	})
+	domAdd(result,elList)
+})
+
+
+let elOption1 = document.createElement('option')
+let elOption2 = document.createElement('option')
+let elOption3 = document.createElement('option')
+let elOption4 = document.createElement('option')
+let elOption5 = document.createElement('option')
+let elOption6 = document.createElement('option')
+let elOption7 = document.createElement('option')
+let elOption8 = document.createElement('option')
+let elOption9 = document.createElement('option')
+let elOption10 = document.createElement('option')
+
+
+elOption1.value = 'Grass'
+elOption2.value = 'Poison'
+elOption3.value = 'Fire'
+elOption4.value = 'Flying'
+elOption5.value = 'Water'
+elOption6.value = 'Dragon'
+elOption7.value = 'Electric'
+elOption8.value = 'Rock'
+elOption9.value = 'Ice'
+elOption10.value = 'Bug'
+
+elOption1.textContent='Grass'
+elOption2.textContent = 'Poison'
+elOption3.textContent = 'Fire'
+elOption4.textContent = 'Flying'
+elOption5.textContent = 'Water'
+elOption6.textContent = 'Dragon'
+elOption7.textContent = 'Electric'
+elOption8.textContent = 'Rock'
+elOption9.textContent = 'Ice'
+elOption10.textContent = 'Bug'
+
+elSelect.appendChild(elOption1)
+elSelect.appendChild(elOption2)
+elSelect.appendChild(elOption3)
+elSelect.appendChild(elOption4)
+elSelect.appendChild(elOption5)
+elSelect.appendChild(elOption6)
+elSelect.appendChild(elOption7)
+elSelect.appendChild(elOption8)
+elSelect.appendChild(elOption9)
+elSelect.appendChild(elOption10)
+
+
+// let burn = []
+// burn.push(pokemons.type)
+// let burnLast = new Set(burn)
+// console.log(burnLast)
