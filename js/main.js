@@ -3562,62 +3562,61 @@ elSelect.addEventListener("change" , function(){
 })
 
 
-let elOption1 = document.createElement('option')
-let elOption2 = document.createElement('option')
-let elOption3 = document.createElement('option')
-let elOption4 = document.createElement('option')
-let elOption5 = document.createElement('option')
-let elOption6 = document.createElement('option')
-let elOption7 = document.createElement('option')
-let elOption8 = document.createElement('option')
-let elOption9 = document.createElement('option')
-let elOption10 = document.createElement('option')
+// let elOption1 = document.createElement('option')
+// let elOption2 = document.createElement('option')
+// let elOption3 = document.createElement('option')
+// let elOption4 = document.createElement('option')
+// let elOption5 = document.createElement('option')
+// let elOption6 = document.createElement('option')
+// let elOption7 = document.createElement('option')
+// let elOption8 = document.createElement('option')
+// let elOption9 = document.createElement('option')
+// let elOption10 = document.createElement('option')
 
 
-elOption1.value = 'Grass'
-elOption2.value = 'Poison'
-elOption3.value = 'Fire'
-elOption4.value = 'Flying'
-elOption5.value = 'Water'
-elOption6.value = 'Dragon'
-elOption7.value = 'Electric'
-elOption8.value = 'Rock'
-elOption9.value = 'Ice'
-elOption10.value = 'Bug'
+// elOption1.value = 'Grass'
+// elOption2.value = 'Poison'
+// elOption3.value = 'Fire'
+// elOption4.value = 'Flying'
+// elOption5.value = 'Water'
+// elOption6.value = 'Dragon'
+// elOption7.value = 'Electric'
+// elOption8.value = 'Rock'
+// elOption9.value = 'Ice'
+// elOption10.value = 'Bug'
 
-elOption1.textContent='Grass'
-elOption2.textContent = 'Poison'
-elOption3.textContent = 'Fire'
-elOption4.textContent = 'Flying'
-elOption5.textContent = 'Water'
-elOption6.textContent = 'Dragon'
-elOption7.textContent = 'Electric'
-elOption8.textContent = 'Rock'
-elOption9.textContent = 'Ice'
-elOption10.textContent = 'Bug'
+// elOption1.textContent='Grass'
+// elOption2.textContent = 'Poison'
+// elOption3.textContent = 'Fire'
+// elOption4.textContent = 'Flying'
+// elOption5.textContent = 'Water'
+// elOption6.textContent = 'Dragon'
+// elOption7.textContent = 'Electric'
+// elOption8.textContent = 'Rock'
+// elOption9.textContent = 'Ice'
+// elOption10.textContent = 'Bug'
 
-elSelect.appendChild(elOption1)
-elSelect.appendChild(elOption2)
-elSelect.appendChild(elOption3)
-elSelect.appendChild(elOption4)
-elSelect.appendChild(elOption5)
-elSelect.appendChild(elOption6)
-elSelect.appendChild(elOption7)
-elSelect.appendChild(elOption8)
-elSelect.appendChild(elOption9)
-elSelect.appendChild(elOption10)
+// elSelect.appendChild(elOption1)
+// elSelect.appendChild(elOption2)
+// elSelect.appendChild(elOption3)
+// elSelect.appendChild(elOption4)
+// elSelect.appendChild(elOption5)
+// elSelect.appendChild(elOption6)
+// elSelect.appendChild(elOption7)
+// elSelect.appendChild(elOption8)
+// elSelect.appendChild(elOption9)
+// elSelect.appendChild(elOption10)
+let myArray = [];
 
-// function pic(array , node){
-// 	let complete = []
-// 	for (i of array){
-// 			complete.push(i.type[0])		
-			
-// 	}
-// 	var newOption = document.createElement('option');
-// 	// newOption.textContent = (i.type)
-// 	node.appendChild(newOption); 
-// 	newOption.textContent = new Set(complete)
-// }
-// // elSelect.textContent = newIt
-// pic(pokemons,elSelect)
+for (item of pokemons) {
+  myArray.push(...item.type);
+}
+
+let mySet = new Set(myArray);
+
+for (const item of Array.from(mySet)) {
+  let li = document.createElement("option");
+  li.textContent = item;
+  elSelect.appendChild(li);
+}
 
